@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100d1d">
+  <meta name="description" content="BollyHits Radio Network — Bollywood favourites, golden classics and DesiZone hits, all in one place.">
+  <title>BollyHits Radio Network | Where melody never dies…</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline"><span class="live-dot"></span> LIVE RADIO • BOLLYWOOD THROUGH THE DECADES</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="BollyHits Radio Network home">
+      <span class="brand-mark">BH<span>♪</span></span>
+      <span class="brand-copy"><strong>BollyHits <em>Radio</em></strong><small>NETWORK</small></span>
+    </a>
+    <nav><a href="#stations">Stations</a><a href="#about">About</a><a href="https://www.desizoneradio.com/" target="_blank" rel="noopener">DesiZone Network ↗</a></nav>
+    <a class="header-cta" href="#stations">Explore stations <span>↓</span></a>
+  </header>
+
+  <div class="channel-tabs-wrap" aria-label="Choose a radio channel">
+    <div class="channel-tabs-label">LISTEN LIVE</div>
+    <div class="channel-tabs" id="channel-tabs" role="tablist" aria-label="Radio channels"></div>
+  </div>
+
+      <section class="section stations-section" id="stations">
+      <div class="section-heading"><div><div class="eyebrow">TUNE IN YOUR WAY</div><h2>Choose your <span>vibe.</span></h2></div><p>Pick a channel and press play.<br>Your music keeps playing while you explore.</p></div>
+      <section class="music-dashboard" aria-label="Station music information">
+        <div class="now-playing-panel">
+          <div class="panel-heading"><div><span class="live-dot"></span> NOW PLAYING</div><div class="now-status-group"><span class="listener-pill">♟ <strong id="listener-count">—</strong> listeners</span><span class="live-pill">ON AIR</span></div></div>
+          <div class="now-playing-content">
+            <div class="large-art" id="now-art">♫</div>
+            <div class="now-details"><div class="song-kicker" id="now-station">SELECT A STATION</div><h3 id="now-title">Tune in to the music</h3><p id="now-artist">Artist information will appear here</p>
+              <div class="song-facts"><div><small>ALBUM</small><strong id="now-album">—</strong></div><div><small>CUSTOM FIELD</small><strong id="now-custom">—</strong></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="side-music-panels">
+          <section class="music-list-panel"><div class="panel-heading"><div>NEXT PLAYING</div><span class="panel-icon">↗</span></div><div id="next-track" class="next-track"><div class="mini-art">♫</div><div class="list-track-meta"><strong>Waiting for schedule</strong><span>Next song details appear when available</span></div></div></section>
+          <section class="music-list-panel history-panel"><div class="panel-heading"><div>TRACK HISTORY</div><span class="panel-subtitle">RECENT TRACKS</span></div><div id="track-history" class="track-history"><div class="history-empty">Track history will appear when the station API provides it.</div></div></section>
+        </div>
+      </section>
+      <div class="filter-row" role="group" aria-label="Filter stations">
+        <button class="filter active" data-filter="all">All stations <span>7</span></button>
+        <button class="filter" data-filter="bollyhits">BollyHits</button>
+        <button class="filter" data-filter="desizone">DesiZone</button>
+      </div>
+      <div class="station-grid" id="station-grid"></div>
+    </section>
+
+    <section class="feature-band" id="about">
+      <div class="feature-icon">♫</div><div><div class="eyebrow">ONE NETWORK. EVERY ERA.</div><h2>Made for every kind of <span>music lover.</span></h2><p>Fresh hits, 2000s throwbacks, timeless 90s romance and golden-era favourites — all just one tap away.</p></div>
+      <a class="outline-btn" href="https://www.desizoneradio.com/" target="_blank" rel="noopener">Visit DesiZone <span>↗</span></a>
+    </section>
+  </main>
+
+  <footer><a class="footer-brand" href="#">BollyHits Radio Network</a><span>Where melody never dies…</span><span>Featuring DesiZone Network stations</span></footer>
+
+  <aside class="player-dock" aria-label="Radio player">
+    <div class="dock-station"><div class="dock-art" id="dock-art">♫</div><div class="dock-track"><strong id="dock-title">Choose a station</strong><span id="dock-subtitle">Your next favourite song starts here</span><small id="dock-status">READY TO PLAY</small></div></div>
+    <div class="dock-controls"><button id="prev-station" class="icon-btn" aria-label="Previous station" title="Previous station">⏮</button><button id="play-toggle" class="play-btn" aria-label="Play radio" title="Play radio">▶</button><button id="next-station" class="icon-btn" aria-label="Next station" title="Next station">⏭</button></div>
+    <div class="dock-right"><div class="now-label"><span class="live-dot"></span> <span id="dock-live">LIVE RADIO</span></div><label class="volume-control" aria-label="Volume">🔊 <input id="volume" type="range" min="0" max="1" step="0.05" value="0.8"></label></div>
+    <div class="dock-progress" aria-label="Track progress">
+      <span id="track-elapsed">0:00</span>
+      <input id="track-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Track progress" disabled>
+      <span id="track-remaining">--:--</span>
+    </div>
+    <audio id="radio-audio" preload="none" crossorigin="anonymous"></audio>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
